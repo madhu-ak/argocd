@@ -1,11 +1,12 @@
 pipeline {
     agent {
-        docker { image 'node:20.17.0-alpine3.20' }
+        agent any
     }
     stages {
         stage('Build Maven') {
             steps {
                 checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/madhu-ak/argocd.git']]])
+                dir('/go-app/Jenkinsfile')
 
             }
         }
