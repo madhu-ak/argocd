@@ -6,7 +6,7 @@ pipeline{
         stage('Hello') {
             steps{
                 echo 'Hello world'
-                sh 'git'
+                sh 'git -v '
             }
         }
     
