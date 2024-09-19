@@ -18,7 +18,8 @@ pipeline {
 
     stage('Build docker'){
         steps{
-            docker build -t goapp
+            echo 'Building Docker image'
+            sh 'docker build -t goapp'
         }
     }
     
